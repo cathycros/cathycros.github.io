@@ -6,23 +6,11 @@
     <meta name="description" content=" FILL ME IN ">
     <meta name="author" content=" FILL ME IN ">
     <title>Cameron Pittman: Portfolio</title>
+    <link href="css/print.css" rel="stylesheet" media="print">
+<style>
+html{font-size:100%;overflow-y:scroll;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);text-size-adjust:none;}body{margin:0px;font-size:14px;line-height:1.61;font-weight:400;background:rgb(255, 255, 255);}body, button, input, select, textarea{font-family:"Open Sans", sans-serif;color:rgb(51, 51, 51);}header, footer, .container{max-width:45em;margin:0px auto;}header{padding:0px 0.5em;color:rgb(201, 11, 11);}a{color:rgb(17, 34, 204);}a:visited{color:rgb(102, 17, 204);}img{border:0px;max-width:100%;}header img{border-radius:40px;float:left;}header p{font-size:1.5em;font-weight:bold;padding-left:4em;}header p span{font-size:0.8em;font-weight:normal;}.hero{padding:2em;background-color:rgb(248, 248, 248);font-size:1.2em;border-bottom:1px solid rgb(204, 204, 204);border-top:1px solid rgb(204, 204, 204);}b, strong{font-weight:bold;}.content{padding:1em;}ul, ol{margin:1em 0px;padding:0px 0px 0px 20px;}.content li{list-style-type:none;font-size:1.1em;}li img{float:left;padding-right:1em;}li p{font-size:0.9em;font-style:italic;}footer{padding:0px 0.5em;border-top:1px solid rgb(204, 204, 204);}footer span{float:right;font-style:italic;}
+</style>
 
-    <!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/print.css" rel="stylesheet">
-
-    <script>
-      (function(w,g){w['GoogleAnalyticsObject']=g;
-      w[g]=w[g]||function(){(w[g].q=w[g].q||[]).push(arguments)};w[g].l=1*new Date();})(window,'ga');
-
-      // Optional TODO: replace with your Google Analytics profile ID.
-      ga('create', 'UA-XXXX-Y');
-      ga('send', 'pageview');
-    </script>
-    <script src="http://www.google-analytics.com/analytics.js"></script>
-    <script async src="js/perfmatters.js"></script>
   </head>
 
   <body>
@@ -67,5 +55,32 @@
     <footer>
       <p>&copy; Web Performance 2014 <span id="crp-stats"></span></p>
     </footer>
+
+    <noscript id="deferred-styles">
+      <link rel="stylesheet" type="text/css" href="css/style.css"/>
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    </noscript>
+    <script>
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+    </script>
+    <script>
+      (function(w,g){w['GoogleAnalyticsObject']=g;
+      w[g]=w[g]||function(){(w[g].q=w[g].q||[]).push(arguments)};w[g].l=1*new Date();})(window,'ga');
+
+      ga('create', 'UA-XXXX-Y');
+      ga('send', 'pageview');
+    </script>
+    <script async src="http://www.google-analytics.com/analytics.js"></script>
+    <script async src="js/perfmatters.js"></script>
   </body>
 </html>
